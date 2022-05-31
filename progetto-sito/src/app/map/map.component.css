@@ -10,11 +10,11 @@
   .map-frame {
     border: 2px solid black;
     height: 405px;
-    width: 635px;
+    width: 735px;
   }
   
   #map {
     height: 400px;
-    width: 630px;
+    width: 730px;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 1);
   }

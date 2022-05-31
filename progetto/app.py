@@ -31,5 +31,20 @@ def onedata(string):
         resp = json_util.dumps(data)
         return Response(resp, mimetype = 'application/json') 
 
+@app.route('/markers', methods=['GET'])
+def markersGet():
+        points = []
+        result = mongo.db.stazioni.find().limit(230)
+        for i in result:
+            points.append({
+                "Coordinates": {
+                    "lng": i['longitude'],
+                    "lat": i['latitude'],
+                    "name": i["name"]
+
+                }
+            })
+        return jsonify(points)
+
 if __name__ == '__main__':
     app.run()
